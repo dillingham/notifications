@@ -1,0 +1,32 @@
+{
+    "name": "dillingham/notifications",
+    "description": "Laravel Jetstream Inertia Notifications",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Brian Dillingham",
+            "email": "brian@dillingham.dev"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "JetstreamKit\\Notifications\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "JetstreamKit\\Notifications\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "JetstreamKit\\Notifications\\NotificationProvider"
+            ]
+        }
+    },
+    "require-dev": {
+        "orchestra/testbench": "^6.17"
+    }
+}
