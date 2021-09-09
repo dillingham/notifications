@@ -1,5 +1,5 @@
 {
-    "name": "dillingham/notifications",
+    "name": "jetstreamkit/notifications",
     "description": "Laravel Jetstream Inertia Notifications",
     "type": "library",
     "license": "MIT",
