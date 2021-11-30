@@ -1,6 +1,6 @@
 <?php
 
-namespace JetstreamKit\Notifications\Tests\Fixtures\Models;
+namespace HeadlessLaravel\Notifications\Tests\Fixtures\Models;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;

@@ -1,6 +1,6 @@
 {
-    "name": "jetstreamkit/notifications",
-    "description": "Laravel Jetstream Inertia Notifications",
+    "name": "headlesslaravel/notifications",
+    "description": "Headless Notifications for Laravel",
     "type": "library",
     "license": "MIT",
     "authors": [
@@ -11,18 +11,18 @@
     ],
     "autoload": {
         "psr-4": {
-            "JetstreamKit\\Notifications\\": "src/"
+            "HeadlessLaravel\\Notifications\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "JetstreamKit\\Notifications\\Tests\\": "tests/"
+            "HeadlessLaravel\\Notifications\\Tests\\": "tests/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "JetstreamKit\\Notifications\\NotificationProvider"
+                "HeadlessLaravel\\Notifications\\NotificationProvider"
             ]
         }
     },

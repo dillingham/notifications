@@ -1,6 +1,6 @@
 <?php
 
-namespace JetstreamKit\Notifications\Tests;
+namespace HeadlessLaravel\Notifications\Tests;
 
 use JetstreamKit\Notifications\NotificationProvider;
 use JetstreamKit\Notifications\Tests\Fixtures\Models\User;

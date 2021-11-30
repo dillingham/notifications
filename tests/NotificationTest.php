@@ -1,6 +1,6 @@
 <?php
 
-namespace JetstreamKit\Notifications\Tests;
+namespace HeadlessLaravel\Notifications\Tests;
 
 use Illuminate\Support\Facades\Route;
 use JetstreamKit\Notifications\Tests\Fixtures\Models\User;

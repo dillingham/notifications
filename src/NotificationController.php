@@ -1,6 +1,6 @@
 <?php
 
-namespace JetstreamKit\Notifications;
+namespace HeadlessLaravel\Notifications;
 
 use Illuminate\Notifications\DatabaseNotification;
 use Illuminate\Routing\Controller;

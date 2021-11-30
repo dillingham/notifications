@@ -1,6 +1,6 @@
 <?php
 
-namespace JetstreamKit\Notifications;
+namespace HeadlessLaravel\Notifications;
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
