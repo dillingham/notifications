@@ -3,7 +3,7 @@
 namespace HeadlessLaravel\Notifications\Tests;
 
 use Illuminate\Support\Facades\Route;
-use JetstreamKit\Notifications\Tests\Fixtures\Models\User;
+use HeadlessLaravel\Notifications\Tests\Fixtures\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Notifications\DatabaseNotification;
 

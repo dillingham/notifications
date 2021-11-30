@@ -2,8 +2,8 @@
 
 namespace HeadlessLaravel\Notifications\Tests;
 
-use JetstreamKit\Notifications\NotificationProvider;
-use JetstreamKit\Notifications\Tests\Fixtures\Models\User;
+use HeadlessLaravel\Notifications\NotificationProvider;
+use HeadlessLaravel\Notifications\Tests\Fixtures\Models\User;
 use Orchestra\Testbench\TestCase as Orchestra;
 
 class TestCase extends Orchestra

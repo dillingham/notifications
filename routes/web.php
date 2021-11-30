@@ -1,6 +1,6 @@
 <?php
 
-use \JetstreamKit\Notifications\NotificationController;
+use \HeadlessLaravel\Notifications\NotificationController;
 use Illuminate\Support\Facades\Route;
 
 Route::middleware(['web', 'auth', 'verified'])
