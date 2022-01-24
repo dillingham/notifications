@@ -1,10 +1,10 @@
 <?php
 
-use \HeadlessLaravel\Notifications\NotificationController;
+use HeadlessLaravel\Notifications\NotificationController;
 use Illuminate\Support\Facades\Route;
 
 Route::middleware(['web', 'auth', 'verified'])
-    ->group(function() {
+    ->group(function () {
         Route::get('notifications', [NotificationController::class, 'all']);
         Route::get('notifications/unread', [NotificationController::class, 'unread']);
         Route::get('notifications/read', [NotificationController::class, 'read']);

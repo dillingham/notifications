@@ -19,13 +19,13 @@ class TestCase extends Orchestra
     {
         $app['config']->set('database.default', 'sqlite');
         $app['config']->set('database.connections.sqlite', [
-            'driver' => 'sqlite',
+            'driver'   => 'sqlite',
             'database' => ':memory:',
-            'prefix' => '',
+            'prefix'   => '',
         ]);
 
-        include_once __DIR__ . '/Fixtures/Database/Migrations/create_users_table.php.stub';
-        include_once __DIR__ . '/Fixtures/Database/Migrations/create_notifications_table.php.stub';
+        include_once __DIR__.'/Fixtures/Database/Migrations/create_users_table.php.stub';
+        include_once __DIR__.'/Fixtures/Database/Migrations/create_notifications_table.php.stub';
 
         (new \CreateUsersTable())->up();
         (new \CreateNotificationsTable())->up();
@@ -34,8 +34,8 @@ class TestCase extends Orchestra
     public function authUser()
     {
         $user = User::forceCreate([
-            'name' => 'User',
-            'email' => 'user@example.com',
+            'name'     => 'User',
+            'email'    => 'user@example.com',
             'password' => '$2y$10$MTibKZXWRvtO2gWpfpsngOp6FQXWUhHPTF9flhsaPdWvRtsyMUlC2',
         ]);
 
