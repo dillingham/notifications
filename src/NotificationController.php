@@ -44,7 +44,7 @@ class NotificationController extends Controller
         );
 
         return response()->json([
-            'success' => $notification->markAsRead()
+            'success' => $notification->markAsRead(),
         ]);
     }
 
@@ -52,12 +52,12 @@ class NotificationController extends Controller
     {
         $deleted = DatabaseNotification::where([
             'notifiable_type' => get_class(auth()->user()),
-            'notifiable_id' => auth()->id(),
+            'notifiable_id'   => auth()->id(),
         ])->delete();
 
         return response()->json([
             'deleted' => $deleted,
-            'success' => true
+            'success' => true,
         ]);
     }
 
@@ -70,7 +70,7 @@ class NotificationController extends Controller
 
         return response()->json([
             'deleted' => $notification->id,
-            'success' => $notification->delete()
+            'success' => $notification->delete(),
         ]);
     }
 }

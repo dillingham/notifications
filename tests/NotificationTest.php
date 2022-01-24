@@ -2,16 +2,16 @@
 
 namespace HeadlessLaravel\Notifications\Tests;
 
-use Illuminate\Support\Facades\Route;
 use HeadlessLaravel\Notifications\Tests\Fixtures\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Notifications\DatabaseNotification;
+use Illuminate\Support\Facades\Route;
 
 class NotificationTest extends TestCase
 {
     use RefreshDatabase;
 
-    public function setUp():void
+    public function setUp(): void
     {
         parent::setUp();
 
@@ -29,27 +29,27 @@ class NotificationTest extends TestCase
         $user = $this->authUser();
 
         DatabaseNotification::create([
-            'id' => '123',
+            'id'              => '123',
             'notifiable_type' => User::class,
-            'notifiable_id' => $user->id,
-            'type' => 'invoice',
-            'data' => [
-                'invoice_amount' => 100
-            ]
+            'notifiable_id'   => $user->id,
+            'type'            => 'invoice',
+            'data'            => [
+                'invoice_amount' => 100,
+            ],
         ]);
 
         DatabaseNotification::create([
-            'id' => '456',
+            'id'              => '456',
             'notifiable_type' => User::class,
-            'notifiable_id' => $user->id,
-            'type' => 'invoice',
-            'read_at' => now(),
-            'data' => [
-                'invoice_amount' => 100
-            ]
+            'notifiable_id'   => $user->id,
+            'type'            => 'invoice',
+            'read_at'         => now(),
+            'data'            => [
+                'invoice_amount' => 100,
+            ],
         ]);
 
-        $this->get('/notifications') ->assertJsonPath('total', 2);
+        $this->get('/notifications')->assertJsonPath('total', 2);
     }
 
     public function test_listing_unread_notifications()
@@ -57,24 +57,24 @@ class NotificationTest extends TestCase
         $user = $this->authUser();
 
         $expected = DatabaseNotification::create([
-            'id' => '123',
+            'id'              => '123',
             'notifiable_type' => User::class,
-            'notifiable_id' => $user->id,
-            'type' => 'invoice',
-            'data' => [
-                'invoice_amount' => 100
-            ]
+            'notifiable_id'   => $user->id,
+            'type'            => 'invoice',
+            'data'            => [
+                'invoice_amount' => 100,
+            ],
         ]);
 
         $rejected = DatabaseNotification::create([
-            'id' => 'read',
+            'id'              => 'read',
             'notifiable_type' => User::class,
-            'notifiable_id' => $user->id,
-            'type' => 'invoice',
-            'read_at' => now(),
-            'data' => [
-                'invoice_amount' => 100
-            ]
+            'notifiable_id'   => $user->id,
+            'type'            => 'invoice',
+            'read_at'         => now(),
+            'data'            => [
+                'invoice_amount' => 100,
+            ],
         ]);
 
         $this->get('/notifications/unread')
@@ -90,12 +90,12 @@ class NotificationTest extends TestCase
         $user = $this->authUser();
 
         $notification = DatabaseNotification::create([
-            'id' => '123',
+            'id'              => '123',
             'notifiable_type' => User::class,
-            'notifiable_id' => $user->id,
-            'type' => 'invoice',
-            'data' => [],
-            'read_at' => now()
+            'notifiable_id'   => $user->id,
+            'type'            => 'invoice',
+            'data'            => [],
+            'read_at'         => now(),
         ]);
 
         $this->get('/notifications/read')
@@ -111,13 +111,13 @@ class NotificationTest extends TestCase
         $user = $this->authUser();
 
         DatabaseNotification::create([
-            'id' => '123',
+            'id'              => '123',
             'notifiable_type' => User::class,
-            'notifiable_id' => $user->id,
-            'type' => 'invoice',
-            'data' => [
-                'invoice_amount' => 100
-            ]
+            'notifiable_id'   => $user->id,
+            'type'            => 'invoice',
+            'data'            => [
+                'invoice_amount' => 100,
+            ],
         ]);
 
         $this->get('/notifications/count')
@@ -129,13 +129,13 @@ class NotificationTest extends TestCase
         $user = $this->authUser();
 
         $notification = DatabaseNotification::create([
-            'id' => '123',
+            'id'              => '123',
             'notifiable_type' => User::class,
-            'notifiable_id' => $user->id,
-            'type' => 'invoice',
-            'data' => [
-                'invoice_amount' => 100
-            ]
+            'notifiable_id'   => $user->id,
+            'type'            => 'invoice',
+            'data'            => [
+                'invoice_amount' => 100,
+            ],
         ]);
 
         $this->assertNull($notification->read_at);
@@ -150,13 +150,13 @@ class NotificationTest extends TestCase
         $user = $this->authUser();
 
         $notification = DatabaseNotification::create([
-            'id' => '123',
+            'id'              => '123',
             'notifiable_type' => User::class,
-            'notifiable_id' => $user->id,
-            'type' => 'invoice',
-            'data' => [
-                'invoice_amount' => 100
-            ]
+            'notifiable_id'   => $user->id,
+            'type'            => 'invoice',
+            'data'            => [
+                'invoice_amount' => 100,
+            ],
         ]);
 
         $this->assertNull($notification->read_at);
@@ -171,20 +171,20 @@ class NotificationTest extends TestCase
         $user = $this->authUser();
 
         DatabaseNotification::create([
-            'id' => '123',
+            'id'              => '123',
             'notifiable_type' => User::class,
-            'notifiable_id' => $user->id,
-            'type' => 'invoice',
-            'data' => []
+            'notifiable_id'   => $user->id,
+            'type'            => 'invoice',
+            'data'            => [],
         ]);
 
         DatabaseNotification::create([
-            'id' => '345',
+            'id'              => '345',
             'notifiable_type' => User::class,
-            'notifiable_id' => $user->id,
-            'type' => 'invoice',
-            'read_at' => now(),
-            'data' => [],
+            'notifiable_id'   => $user->id,
+            'type'            => 'invoice',
+            'read_at'         => now(),
+            'data'            => [],
         ]);
 
         $this->post('/notifications/clear')
