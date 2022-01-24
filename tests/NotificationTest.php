@@ -15,6 +15,7 @@ class NotificationTest extends TestCase
     {
         parent::setUp();
 
+        Route::notifications();
         Route::get('login', 'LoginController@index')->name('login');
     }
 

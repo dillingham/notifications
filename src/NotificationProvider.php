@@ -14,7 +14,7 @@ class NotificationProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->loadRoutesFrom(__DIR__.'/../routes/web.php');
+        //
     }
 
     /**
@@ -24,6 +24,8 @@ class NotificationProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        Route::macro('notifications', function () {
+            return app(Routes::class)->notifications();
+        });
     }
 }
