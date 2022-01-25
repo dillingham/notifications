@@ -21,26 +21,20 @@ Notification Endpoints for Laravel Applications
 ---
 
 ### Install
-Add the composer package:
-```
+
+This package is included when `headlesslaravel` is installed.
+
+Or install the package independently via composer:
+
+```bash
 composer require headlesslaravel/notifications
 ```
 
-Call the Laravel command to add a migration.
-```
-php artisan notifications:table
-```
-For the full Laravel docs for notifications: [read more](https://laravel.com/docs/notifications)
+### Usage
+
+[Read the documentation](https://github.com/headlesslaravel/docs/blob/main/notifications.md)
 
 
-### Available Endpoints
+### License
 
-| Method | Endpoint | Action |
-| ------ | -------- | ------ |
-| get | /notifications | all |
-| get | /notifications/unread | unread |
-| get | /notifications/read | read |
-| get | /notifications/count | count |
-| post | /notifications/clear | clear |
-| post | /notifications/{notification}/mark-as-read | markAsRead |
-| delete | /notifications/{notification} | destroy |
+The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
