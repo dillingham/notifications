@@ -32,10 +32,10 @@ class Routes
     {
         $key = $this->notificationKey();
 
-        return array_map(function ($endpoint) use($key) {
+        return array_map(function ($endpoint) use ($key) {
             return array_merge($endpoint, [
                 'action'       => [NotificationController::class, $endpoint['type']],
-                'name'         => $key.'.'.$endpoint['type']
+                'name'         => $key.'.'.$endpoint['type'],
             ]);
         }, $this->endpoints());
     }
