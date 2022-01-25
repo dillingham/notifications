@@ -2,7 +2,6 @@
 
 namespace HeadlessLaravel\Notifications;
 
-use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
 
 class NotificationProvider extends ServiceProvider
