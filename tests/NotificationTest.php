@@ -15,6 +15,7 @@ class NotificationTest extends TestCase
     {
         parent::setUp();
 
+        Route::notifications();
         Route::get('login', 'LoginController@index')->name('login');
     }
 
@@ -79,7 +80,7 @@ class NotificationTest extends TestCase
         $this->get('/notifications/unread')
             ->assertJsonPath('total', 1)
             ->assertJsonPath('data.0.id', $expected->id)
-            ->assertJsonPath('data.0.notifiable_id', "{$user->id}")
+            ->assertJsonPath('data.0.notifiable_id', $user->id)
             ->assertJsonPath('data.0.type', 'invoice')
             ->assertJsonPath('data.0.data.invoice_amount', 100);
     }
